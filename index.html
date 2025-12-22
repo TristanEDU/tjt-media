@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJT Media Server - Your Personal Media Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.4em;
+            margin: 20px 0 10px 0;
+        }
+
+        .intro-section {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .service-section {
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: #e9ecef;
+            border-left-width: 8px;
+        }
+
+        .service-card h4 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .service-card.coming-soon {
+            border-left-color: #ffc107;
+            opacity: 0.8;
+        }
+
+        .service-card.coming-soon h4 {
+            color: #ffc107;
+        }
+
+        ul {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .workflow {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .workflow h2 {
+            color: #d84315;
+            border-bottom-color: #d84315;
+        }
+
+        .workflow-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .workflow-steps li {
+            counter-increment: step-counter;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 80px;
+        }
+
+        .workflow-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #d84315;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .workflow-steps strong {
+            color: #d84315;
+            font-size: 1.1em;
+        }
+
+        .access-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .access-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 10px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 5px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .features-list li::before {
+            position: absolute;
+            left: 15px;
+            font-size: 1.2em;
+        }
+
+        .features-list li.active::before {
+            content: "✅";
+        }
+
+        .features-list li.pending::before {
+            content: "🔜";
+        }
+
+        .privacy-section {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .privacy-section h2 {
+            color: white;
+            border-bottom-color: white;
+        }
+
+        .privacy-section ul {
+            list-style: none;
+        }
+
+        .privacy-section li::before {
+            content: "🔐 ";
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        footer strong {
+            font-size: 1.3em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .workflow-steps li {
+                padding-left: 70px;
+            }
+
+            .workflow-steps li::before {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 TJT Media Server 🎵</h1>
+            <p>Your personal, all-in-one home media management and streaming solution</p>
+        </header>
+
+        <div class="content intro-section">
+            <h2>🎯 What It Does</h2>
+            <p style="font-size: 1.1em; margin: 20px 0;">TJT Media Server is a comprehensive home media server that provides:</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>📺 Media Streaming</h4>
+                    <p>Watch your movies, TV shows, and listen to audiobooks from anywhere</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📁 Content Management</h4>
+                    <p>Automatically organize, download, and manage your media library</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎭 Request System</h4>
+                    <p>Family-friendly interface to request new content</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⭐ Quality Control</h4>
+                    <p>Automated monitoring and upgrading of media quality</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌐 Universal Access</h4>
+                    <p>Stream to any device - phones, tablets, smart TVs, and computers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>🏗️ How It Works</h2>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">TJT Media Server integrates several specialized applications that work together to create a seamless media experience:</p>
+
+            <div class="service-section">
+                <h3>Media Consumption</h3>
+                
+                <div class="service-card">
+                    <h4>📺 Jellyfin</h4>
+                    <p>Your personal streaming platform - think Netflix, but for your own content.</p>
+                    <ul>
+                        <li>Stream movies and TV shows to any device</li>
+                        <li>Automatic metadata and artwork fetching</li>
+                        <li>User profiles with watch history and recommendations</li>
+                        <li>Mobile apps for iOS and Android</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h4>📚 Audiobookshelf</h4>
+                    <p>Dedicated audiobook and podcast server</p>
+                    <ul>
+                        <li>Beautiful interface for audiobook management</li>
+                        <li>Progress tracking across devices</li>
+                        <li>Sleep timer and playback speed controls</li>
+                        <li>Chapter navigation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-section">
+                <h3>Content Management</h3>
+                
+                <div class="service-card">
+                    <h4>🎬 Radarr</h4>
+                    <p>Automated movie collection manager</p>
+                    <ul>
+                        <li>Searches for movies across multiple sources</li>
+                        <li>Monitors for new releases and upgrades</li>
+                        <li>Automatically organizes your movie library</li>
+                        <li>Quality profile management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h4>📡 Sonarr</h4>
+                    <p>TV series automation system</p>
+                    <ul>
+                        <li>Tracks your favorite shows</li>
+                        <li>Automatically downloads new episodes as they air</li>
+                        <li>Season pack management</li>
+                        <li>Missing episode detection</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h4>🔍 Prowlarr</h4>
+                    <p>Indexer manager and proxy</p>
+                    <ul>
+                        <li>Centralized management of all your content sources</li>
+                        <li>Integrates with Radarr, Sonarr, and other tools</li>
+                        <li>Health monitoring and testing</li>
+                        <li>Automatic indexer syncing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-section">
+                <h3>Infrastructure</h3>
+                
+                <div class="service-card">
+                    <h4>🌊 qBittorrent</h4>
+                    <p>Download client</p>
+                    <ul>
+                        <li>High-performance torrent client</li>
+                        <li>Web-based interface</li>
+                        <li>Bandwidth management</li>
+                        <li>Integration with Radarr and Sonarr</li>
+                    </ul>
+                </div>
+
+                <div class="service-card coming-soon">
+                    <h4>🎭 Jellyseerr <em>(Coming Soon)</em></h4>
+                    <p>Media request and discovery platform</p>
+                    <ul>
+                        <li>User-friendly interface for requesting movies and TV shows</li>
+                        <li>Integration with Radarr and Sonarr</li>
+                        <li>Request approval system</li>
+                        <li>Discover trending and popular content</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="workflow">
+            <h2>🔄 The Workflow</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Here's how everything works together:</p>
+            
+            <ol class="workflow-steps">
+                <li><strong>Discovery:</strong> Browse content using Jellyfin or request new media through Jellyseerr</li>
+                <li><strong>Request:</strong> When you want something new, Jellyseerr sends the request to Radarr (movies) or Sonarr (TV shows)</li>
+                <li><strong>Search:</strong> Radarr/Sonarr searches through Prowlarr's indexers to find the content</li>
+                <li><strong>Download:</strong> Once found, qBittorrent handles the download</li>
+                <li><strong>Organization:</strong> After downloading, Radarr/Sonarr automatically organizes the files into your library</li>
+                <li><strong>Enjoyment:</strong> The content appears in Jellyfin or Audiobookshelf, ready to stream!</li>
+            </ol>
+        </div>
+
+        <div class="access-section">
+            <h2 style="color: #d84315; border-bottom-color: #d84315;">🚀 Getting Started</h2>
+            
+            <h3 style="color: #d84315;">Accessing the Services</h3>
+            <p>Each service is accessible through its own web interface (URLs provided by your administrator):</p>
+            
+            <div class="access-grid">
+                <div class="access-item">📺 Jellyfin<br><small>Main streaming</small></div>
+                <div class="access-item">📚 Audiobookshelf<br><small>Audiobooks & podcasts</small></div>
+                <div class="access-item">🎭 Jellyseerr<br><small>Request content</small></div>
+            </div>
+
+            <div class="note">
+                💡 <strong>Note:</strong> Contact your system administrator for the specific URLs to access each service.
+            </div>
+
+            <h3 style="color: #d84315; margin-top: 30px;">For Administrators</h3>
+            <div class="access-grid">
+                <div class="access-item">🎬 Radarr<br><small>Manage movies</small></div>
+                <div class="access-item">📡 Sonarr<br><small>Manage TV shows</small></div>
+                <div class="access-item">🔍 Prowlarr<br><small>Configure indexers</small></div>
+                <div class="access-item">🌊 qBittorrent<br><small>Monitor downloads</small></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>🛠️ Technical Stack</h2>
+            <ul>
+                <li><strong>Frontend:</strong> Web-based interfaces for all services</li>
+                <li><strong>Media Server:</strong> Jellyfin (open-source)</li>
+                <li><strong>Audiobook Server:</strong> Audiobookshelf (open-source)</li>
+                <li><strong>Automation:</strong> Radarr, Sonarr, Prowlarr (*arr stack)</li>
+                <li><strong>Download Client:</strong> qBittorrent</li>
+                <li><strong>Request Management:</strong> Jellyseerr (pending implementation)</li>
+            </ul>
+
+            <h2 style="margin-top: 40px;">📋 Features</h2>
+            <ul class="features-list">
+                <li class="active">Automatic media organization</li>
+                <li class="active">Multi-user support with individual profiles</li>
+                <li class="active">Cross-platform streaming (Web, iOS, Android, Smart TV)</li>
+                <li class="active">Quality monitoring and upgrades</li>
+                <li class="active">Metadata and artwork management</li>
+                <li class="active">Watch progress synchronization</li>
+                <li class="active">Mobile apps support</li>
+                <li class="pending">Media request system (Jellyseerr)</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>🔐 Privacy & Security</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">All services run locally on your home network, ensuring:</p>
+            <ul>
+                <li>Your data stays private</li>
+                <li>No subscription fees</li>
+                <li>Full control over your media</li>
+                <li>No external dependencies for playback</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>📞 Support</h2>
+            <p style="font-size: 1.1em;">For assistance with the TJT Media Server:</p>
+            <ul>
+                <li>Check individual service documentation</li>
+                <li>Review logs for troubleshooting</li>
+                <li>Contact your system administrator</li>
+            </ul>
+        </div>
+
+        <footer>
+            <strong>TJT Media Server</strong> - Your media, your way. 🎬🎵📚
+        </footer>
+    </div>
+</body>
+</html>
