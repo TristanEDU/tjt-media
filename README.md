@@ -86,11 +86,13 @@ Here's how everything works together:
 
 ### Accessing the Services
 
-Each service is accessible through its own web interface:
+Each service is accessible through its own web interface (URLs provided by your administrator):
 
 - **Jellyfin**: Your main streaming interface
 - **Audiobookshelf**: For audiobooks and podcasts
 - **Jellyseerr**: Request new content *(coming soon)*
+
+> 💡 Contact your system administrator for the specific URLs to access each service.
 
 ### For Administrators
 
