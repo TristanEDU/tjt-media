@@ -1,8 +1,8 @@
 /* =========================
-     Mobile nav dropdown
+     Mobile header/nav section
      ========================= */
 .pg-nav {
-  position: fixed;
+  /* position: fixed; */
   background-color: var(--color-bg);
   /* color: snow; */
   display: flex;
@@ -54,3 +54,7 @@ nav input[type="checkbox"] {
 .pg-nav-label-img {
   width: 90dvw;
 }
+
+/* =========================
+     Mobile hero section
+     ========================= */
