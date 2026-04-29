@@ -3,15 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Central hub for TJT Media services, tools, and dashboards."
-    />
+    <meta name="description" content="Central hub for TJT Media services, tools, and dashboards." />
     <meta property="og:title" content="TJT Media Hub" />
-    <meta
-      property="og:description"
-      content="Central hub for services, dashboards, and tools."
-    />
+    <meta property="og:description" content="Central hub for services, dashboards, and tools." />
     <meta property="og:image" content="/assets/images/og-image.png" />
     <title>TJT Media Hub</title>
     <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
@@ -23,38 +17,82 @@
     <link rel="stylesheet" href="css/layout.css" />
   </head>
   <body>
-    <header>
-      <nav class="pg-nav">
-        <label for="menu" tabindex="0">
-          <img
-            class="pg-nav-label-img"
-            src="assets/images/ChatGPT Image Apr 26, 2026 at 12_30_44 PM.png"
-            alt=""
-          />
-        </label>
+    <header class="pg-header">
+      <!-- <nav class="pg-nav">
+        <label for="menu" tabindex="0"> ||| </label>
         <input id="menu" type="checkbox" />
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
         </ul>
-      </nav>
+      </nav> -->
+      <!-- <img class="banner-img" src="assets/images/Gemini_Generated_Image_y5dhbqy5dhbqy5dh.png"> -->
     </header>
     <div>
-      <div class="hero">
+      <section class="hero">
         <div class="status-indicator"></div>
-        <h1>The Central Hub for the TJT Media Server</h1>
-        <p class="hero-txt">
-          This is the main dashboard and access point to everything hosted under
-          the TJT-Media domain. Here you will find links to self-hosted media
-          applications along with other tools and experiments.
-        </p>
+        <h1>The Central Hub for the <br /><span class="h1-span">TJT Media Domain</span></h1>
+        <p class="hero-txt">This is the main dashboard and access point to everything hosted under the TJT-Media domain. Here you will find links to self-hosted media applications along with other tools and experiments.</p>
         <div class="hero-btns">
-          <div class="analytics-btn"></div>
-          <div class="contact-btn"></div>
+          <div class="analytics-btn">analytics-btn</div>
+          <div class="contact-btn">contact-btn</div>
         </div>
-      </div>
+      </section>
+      <section class="content-cards">
+        <article>
+          <h2>Portals</h2>
+          <p>Access and the status of the various services associated with the domain can be found below.</p>
+        </article>
+        <div class="card">
+          <div class="app-status-indicator">
+            <div class="status-light">🟢</div>
+            <p class="status-label"></p>
+          </div>
+          <div class="icon">🛰️</div>
+          <h3 class="app-name">app-name</h3>
+          <p class="app-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, id. Voluptas, quasi in officiis ullam nam ad, exercitationem ducimus, deserunt suscipit consequuntur perspiciatis corrupti nobis. Voluptatem non ipsa reiciendis fuga distinctio nesciunt repudiandae natus laboriosam quibusdam quisquam, aliquid officiis placeat facere ducimus hic eius quod nemo odit quidem nobis adipisci!</p>
+          <button class="app-btn">Go to app</button>
+        </div>
+        <div class="card">
+          <div class="app-status-indicator">
+            <div class="status-light">🟢</div>
+            <p class="status-label"></p>
+          </div>
+          <div class="icon">🛰️</div>
+          <h3 class="app-name">app-name</h3>
+          <p class="app-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, id. Voluptas, quasi in officiis ullam nam ad, exercitationem ducimus, deserunt suscipit consequuntur perspiciatis corrupti nobis. Voluptatem non ipsa reiciendis fuga distinctio nesciunt repudiandae natus laboriosam quibusdam quisquam, aliquid officiis placeat facere ducimus hic eius quod nemo odit quidem nobis adipisci!</p>
+          <button class="app-btn">Go to app</button>
+        </div>
+        <div class="card">
+          <div class="app-status-indicator">
+            <div class="status-light">🟢</div>
+            <p class="status-label"></p>
+          </div>
+          <div class="icon">🛰️</div>
+          <h3 class="app-name">app-name</h3>
+          <p class="app-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, id. Voluptas, quasi in officiis ullam nam ad, exercitationem ducimus, deserunt suscipit consequuntur perspiciatis corrupti nobis. Voluptatem non ipsa reiciendis fuga distinctio nesciunt repudiandae natus laboriosam quibusdam quisquam, aliquid officiis placeat facere ducimus hic eius quod nemo odit quidem nobis adipisci!</p>
+          <button class="app-btn">Go to app</button>
+        </div>
+        <div class="card">
+          <div class="app-status-indicator">
+            <div class="status-light">🟢</div>
+            <p class="status-label"></p>
+          </div>
+          <div class="icon">🛰️</div>
+          <h3 class="app-name">app-name</h3>
+          <p class="app-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, id. Voluptas, quasi in officiis ullam nam ad, exercitationem ducimus, deserunt suscipit consequuntur perspiciatis corrupti nobis. Voluptatem non ipsa reiciendis fuga distinctio nesciunt repudiandae natus laboriosam quibusdam quisquam, aliquid officiis placeat facere ducimus hic eius quod nemo odit quidem nobis adipisci!</p>
+          <button class="app-btn">Go to app</button>
+        </div>
+      </section>
     </div>
-    <footer></footer>
+    <footer>
+      <div class="icon"></div>
+      <h2>TJT-Media</h2>
+      <p>Next-generation hosting and experimental hub.</p>
+      <div class="contact-link"></div>
+      <div class="contact-link"></div>
+      <div class="contact-link"></div>
+    </footer>
   </body>
 </html>
