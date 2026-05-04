@@ -1,28 +1,74 @@
+.bd-content {
+  /* width: var(--bd-content-width);
+   */
+}
+
 /* =========================
-     Mobile header/nav section
-     ========================= */
+  Mobile header/nav section
+  ========================= */
 .pg-header {
   /* width: 100vw; */
   height: 10vh;
+  width: 100%;
   background-image: url("./../assets/images/Gemini_Generated_Image_y5dhbqy5dhbqy5dh.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: fixed;
+  /* top: top; */
+  /* left: left; */
+  /* z-index: 999; */
 }
 /* =========================
-     Mobile hero section
-     ========================= */
+  Mobile hero section
+  ========================= */
 .hero {
+  padding: var(--container-padding);
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
+  padding-top: var(--space-xxl);
+  background: radial-gradient(at 70% 95%, var(--color-accent-soft), var(--color-bg) 40%);
 }
 
 .status-indicator {
-  
+  background-color: var(--color-accent-soft);
+  padding: var(--space-sm) var(--space-md);
+  border: solid 2px var(--color-border);
+  border-radius: var(--radius-xl);
+  font-size: var(--font-size-xs);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xxl);
+  margin: var(--space-sm);
 }
 
 .h1-span {
   color: var(--color-accent);
+}
+
+.hero-txt {
+  font-size: var(--font-size-sm);
+}
+
+.hero-btns {
+  display: flex;
+  gap: var(--space-xxl);
+  margin-top: var(--space-lg);
+}
+
+.hero-btn {
+  background: var(--color-accent);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.contact-btn {
+  background: var(--color-surface);
 }
