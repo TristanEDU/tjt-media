@@ -4,7 +4,7 @@
 }
 
 /* =========================
-  Mobile header/nav section
+header/nav section
   ========================= */
 .pg-header {
   /* width: 100vw; */
@@ -20,7 +20,7 @@
   /* z-index: 999; */
 }
 /* =========================
-  Mobile hero section
+hero section
   ========================= */
 .hero {
   padding: var(--container-padding);
@@ -67,8 +67,23 @@ h1 {
   border-radius: var(--radius-lg);
   font-size: var(--font-size-md);
   padding: var(--space-sm) var(--space-lg);
+  vertical-align: text-top;
 }
 
 .contact-btn {
   background: var(--color-surface);
+}
+
+/* =========================
+  Card section
+  ========================= */
+
+.content-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  font-size: var(--font-size-xs);
+}
+
+.card-header {
+  grid-column: 1 / -1;
 }
