@@ -1,3 +1,8 @@
+/* =========================
+   Animations
+   ========================= */
+
+/* Header Animations */
 .pg-header {
   position: relative;
   overflow: hidden;
@@ -11,7 +16,7 @@
   background-size: 0%;
   background-position: center;
   transform: scale(1);
-  animation: zoom-in 2s ease-in forwards;
+  animation: zoom-in 3s ease-in forwards;
   z-index: -1;
 }
 

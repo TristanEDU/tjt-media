@@ -1,0 +1,111 @@
+/* =========================
+   Layout
+   ========================= */
+
+/* Header Layout */
+.pg-header {
+  height: 15vh;
+  width: 100%;
+}
+
+/* Hero Layout */
+.hero {
+  padding: var(--container-padding);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 85vh;
+  text-align: center;
+  padding-bottom: var(--space-xxl);
+}
+
+.hero-btns {
+  display: flex;
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Cards Layout */
+.content-cards {
+  padding: var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-xxl);
+}
+
+.card-header {
+  grid-column: 1 / -1;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.app-status-indicator {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon Layout */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+/* Button Layout */
+.app-btn {
+  margin-top: auto;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Footer Layout */
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: var(--space-xxl);
+  margin-top: var(--space-xxl);
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+  }
+  .links {
+    display: flex;
+    gap: var(--space-lg);
+    font-size: var(--font-size-xl);
+  }
+}

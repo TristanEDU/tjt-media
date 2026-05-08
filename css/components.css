@@ -1,33 +1,10 @@
 /* =========================
-header/nav section
-  ========================= */
-.pg-header {
-  /* width: 100vw; */
-  height: 15vh;
-  width: 100%;
-  /* background-image: url("./../assets/images/Gemini_Generated_Image_y5dhbqy5dhbqy5dh.png"); */
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
-  /* background-position: center; */
-  /* position: fixed; */
-  /* top: top; */
-  /* left: left; */
-  /* z-index: 999; */
-}
-/* =========================
-hero section
-  ========================= */
+   Components
+   ========================= */
+
+/* Hero */
 .hero {
-  padding: var(--container-padding);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: 85vh;
-  text-align: center;
-  /* padding-top: var(--space-md); */
   background: radial-gradient(at 70% 95%, var(--color-accent-soft), var(--color-bg) 40%);
-  padding-bottom: var(--space-xxl);
 }
 
 .status-indicator {
@@ -52,14 +29,6 @@ h1 {
   font-size: var(--font-size-sm);
 }
 
-.hero-btns {
-  display: flex;
-  /* gap: var(--space-xxl); */
-  margin-top: var(--space-lg);
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .hero-btn {
   background: var(--color-accent);
   border-radius: var(--radius-lg);
@@ -74,56 +43,25 @@ h1 {
   background: var(--color-text-muted);
 }
 
-/* =========================
-  Card section
-  ========================= */
-
+/* Cards */
 .content-cards {
-  /* width: 100%; */
-  padding: var(--container-padding);
-  /* max-width: 1200px; */
   font-size: var(--font-size-xs);
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-xxl);
 }
 
 .card-header {
-  grid-column: 1 / -1;
   font-size: var(--font-size-lg);
 }
 
-/* Individual Card */
 .card {
   background-color: var(--color-surface-2);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  padding: 24px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
   transition: transform 0.2s ease;
   box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
   border-color: var(--color-accent-soft);
-}
-
-/* Status Indicator (Top Right) */
-.app-status-indicator {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .status-label {
@@ -136,19 +74,13 @@ h1 {
 }
 
 .status-light {
-  font-size: var(--font-size-xs); /* Using the emoji size or a small div */
+  font-size: var(--font-size-xs);
 }
 
-/* Icon Styling */
+/* Icon */
 .icon {
   background: var(--color-accent-soft);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 8px;
-  margin-bottom: 20px;
   font-size: var(--font-size-md);
   border: 1px solid var(--color-border);
 }
@@ -166,27 +98,21 @@ h1 {
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0 0 24px 0;
-  /* Truncate text if it's too long like in your HTML */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Button Styling */
+/* Button */
 .app-btn {
-  margin-top: auto;
   background: #1f2029;
   border: 1px solid var(--card-border);
   color: var(--text-main);
-  padding: 12px;
   border-radius: 8px;
   cursor: pointer;
   text-align: left;
   font-weight: 500;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   transition: all 0.2s;
 }
 
@@ -194,32 +120,21 @@ h1 {
   background: var(--color-bg);
 }
 
-/* Optional: Add the arrow icon inside the button via CSS */
 .app-btn::after {
   content: "↗";
   font-size: 1rem;
   opacity: 0.5;
 }
 
-/* =========================
-  Footer section
-  ========================= */
+/* Footer */
 
 footer {
   background: var(--color-border);
-  margin-top: var(--space-xxl);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  padding: var(--space-xxl);
-  /* height: 25vh; */
 }
 
 .footer-icon {
   background-image: url(./../assets/icons/favicon.png);
   background-position: center;
-  /* background-size: cover; */
   background-size: 140%;
   height: var(--space-mega-xxl);
   width: var(--space-mega-xxl);
@@ -227,27 +142,10 @@ footer {
 }
 
 .footer-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
 .footer-text h2 {
   color: var(--color-accent);
   margin: var(--space-sm);
-}
-
-@media (max-width: 768px) {
-  footer {
-    /* display: flex; */
-    flex-direction: column;
-  }
-  .links {
-    display: flex;
-    /* flex-direction: row; */
-    gap: var(--space-lg);
-    font-size: var(--font-size-xl);
-  }
 }
