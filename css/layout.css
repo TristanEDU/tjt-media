@@ -41,10 +41,6 @@
   gap: var(--space-xxl);
 }
 
-.card-header {
-  grid-column: 1 / -1;
-}
-
 .card {
   position: relative;
   display: flex;

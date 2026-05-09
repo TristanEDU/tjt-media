@@ -9,6 +9,7 @@
   --color-bg: #0b0b12;
   --color-surface: #14141d;
   --color-surface-2: #1b1b27;
+  --color-surface-3: rgba(255, 255, 255, 0.08);
 
   --color-text: #f5f7ff;
   --color-text-muted: #a7abc0;
@@ -16,7 +17,7 @@
   --color-accent: #8b5cf6;
   --color-accent-soft: rgba(138, 92, 246, 0.288);
 
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(253, 253, 253, 0.63);
 
   /* =========================
      Typography

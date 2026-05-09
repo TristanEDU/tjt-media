@@ -33,7 +33,9 @@ A dark, futuristic landing page serving as the central hub for the TJT Media dom
 
 - **Font Stack**: Inter, Segoe UI, system-ui
 - **Mono Stack**: JetBrains Mono, Fira Code
-- **Scale**: xs (0.75rem) → xxl (2.5rem)
+- **Scale**: Fluid responsive, from xs (0.5em) to xxl (2.5em)
+  - Body root scales via `clamp(1.5em, 2.5vw, 3em)`, flowing from ~24px on small screens to ~48px on large screens
+  - All font-size tokens use em units, scaling proportionally with the root body size
 
 ## File Structure
 
@@ -94,6 +96,26 @@ Keyframes and animation definitions. Currently includes header zoom effect.
 4. **Footer** — Brand info, links, and social icons
 
 ## Design Tokens
+
+### Typography Scale
+
+The typography system uses **fluid responsive scaling**:
+
+1. **Body Root**: `clamp(1.5em, 2.5vw, 3em)`
+   - Minimum: 1.5em (locks at small viewports)
+   - Preferred: 2.5vw (grows with viewport width)
+   - Maximum: 3em (locks at large viewports)
+   - Result: Base font smoothly scales from ~24px (small) → ~48px (large)
+
+2. **Font-Size Variables** (all em-based, relative to body):
+   - xs: 0.5em (12px–24px depending on viewport)
+   - sm: 0.75em (18px–36px)
+   - md: 1em (24px–48px, equals body size)
+   - lg: 1.25em (30px–60px)
+   - xl: 1.75em (42px–84px)
+   - xxl: 2.5em (60px–120px)
+
+**Why em units?** Because they scale *with* the body clamp, creating a proportional, fluid type scale. Every element grows and shrinks together, maintaining visual hierarchy across all viewport sizes without explicit media queries.
 
 ### Spacing Scale
 

@@ -6,6 +6,7 @@
 .pg-header {
   position: relative;
   overflow: hidden;
+  
 }
 
 .pg-header::before {
@@ -25,6 +26,15 @@
     transform: scale(1);
   }
   to {
+    transform: scale(1.2);
+    background-size: 100%;
+  }
+}
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .pg-header::before {
+    animation: none;
     transform: scale(1.2);
     background-size: 100%;
   }

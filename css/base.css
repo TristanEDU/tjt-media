@@ -2,11 +2,13 @@
    Base Styles
    ========================= */
 
+   
+
 body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  font-size: clamp(1.5em, 2.5vw, 3em);
   margin: 0;
   padding: 0;
 }
