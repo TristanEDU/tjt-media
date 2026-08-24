@@ -4,7 +4,11 @@
 
 /* Hero */
 .hero {
-  background: radial-gradient(at 70% 95%, var(--color-accent-soft), var(--color-bg) 40%);
+  background: radial-gradient(
+    at 70% 95%,
+    var(--color-accent-soft),
+    var(--color-bg) 40%
+  );
 }
 
 .status-indicator {
@@ -45,7 +49,7 @@ h1 {
 
 .btn:hover {
   box-shadow: var(--shadow-lg);
-  border: 5px solid var(--color-border);
+  outline: 5px solid var(--color-border);
 }
 
 /* Cards */
@@ -61,7 +65,9 @@ h1 {
   background-color: var(--color-surface-2);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
   box-shadow: var(--shadow-sm);
 }
 
